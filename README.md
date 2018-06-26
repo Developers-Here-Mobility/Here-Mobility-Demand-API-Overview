@@ -106,7 +106,7 @@ The following sections describe the Demand API calls that the client application
 
 ### Requesting and Booking a Ride ###
 
-** *To request and book a ride:* **
+**To request and book a ride:**
 
 1.  Call *GetRideOffers*. In the **RideOffersRequest** parameter, the client specifies the passenger details, pickup and dropoff locations, and any special requirements such as a child seat. Optionally, the client can specify a future pickup time, a desired price range and a sort order for the returned ride offers.
 
@@ -139,7 +139,7 @@ CANCELLED           |   The ride was cancelled by the supplier or by the client.
 
 The client application can poll periodically to get the current ride status, in order to display it to the end user.
 
-*To get the current ride status:*
+**To get the current ride status:**
 
 Call *GetRide*. This returns a Ride object that contains
 several ride details, including its status.
@@ -148,13 +148,13 @@ several ride details, including its status.
 
 You may want to poll periodically for the ride location, so that you can display it dynamically on a map.
 
-*To get the current ride location:*
+**To get the current ride location:**
 
 Call *GetRideLocation*. This returns a **RideLocation** object that contains the ride's geo-location, and optionally the estimated time of arrival at the pickup or dropoff location.
 
 ### Cancelling a Ride ###
 
-*To cancel a ride after it was accepted:*
+**To cancel a ride after it was accepted:**
 
 Call *CancelRide*.
 
@@ -165,6 +165,6 @@ supplier's policy doesn't allow cancellation.
 
 The end user may want to review past rides, future (pre-booked) rides, or rides are currently active.
 
-*To retrieve rides by their status (and optionally by their last update time):*
+**To retrieve rides by their status (and optionally by their last update time):**
 
 Call *GetRides*.
