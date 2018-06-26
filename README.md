@@ -65,7 +65,7 @@ You will receive: 
 Here is an example of what the application key and secret values look like:  
 
 
-```{ "applicationKey": "Casd9nS4WUs90***cCvsurYgtpLEgm8", "applicationSecret": "QcVyN7Wq3HNqWN3DEAI0H***mibtsdUkJ_8zS0skrRHfZyzKbW0gmvjSKgnLt"}```
+```{"applicationKey": "Casd9nS4WUs90***cCvsurYgtpLEgm8", "applicationSecret": "QcVyN7Wq3HNqWN3DEAI0H***mibtsdUkJ_8zS0skrRHfZyzKbW0gmvjSKgnLt"}```
 
 >**Note**: For security reasons, the **applicationSecret** value must not be exposed to the end user. Store he **applicationSecret** value in your server-side code and not in your client-side code. If any abuse of the **applicationSecret** is detected, your credentials will be revoked.
 
@@ -102,12 +102,11 @@ The diagram below illustrates the workflow for booking a ride and updating its s
 
 <img src="./BookRideWorkflow.png">
 
-
 The following sections describe the Demand API calls that the client application makes when implementing common mobility workflows.
 
 ### Requesting and Booking a Ride ###
 
-*To request and book a ride:*
+** *To request and book a ride:* **
 
 1.  Call *GetRideOffers*. In the **RideOffersRequest** parameter, the client specifies the passenger details, pickup and dropoff locations, and any special requirements such as a child seat. Optionally, the client can specify a future pickup time, a desired price range and a sort order for the returned ride offers.
 
