@@ -108,16 +108,15 @@ The following sections describe the Demand API calls that the client application
 
 **To request and book a ride:**
 
-1.  Call *GetRideOffers*. In the **RideOffersRequest** parameter, the client specifies the passenger details, pickup and dropoff locations, and any special requirements such as a child seat. Optionally, the client can specify a future pickup time, a desired price range and a sort order for the returned ride offers.
+1.  Call *RideOffersRequest*. In the call parameters, the client specifies the passenger details, pickup and dropoff locations, and any special requirements such as a child seat. Optionally, the client can specify a future pickup time, a desired price range and a sort order for the returned ride offers.
 
-2.  Receive a **RideOffersResponse** object. This is a list of **RideOffer** objects, containing details such as supplier ID, price, ETA and cancellation policy. If a sort order was specified in the request,    the offer list is sorted by the order requested (lowest to highest price, or soonest to latest ETA).
+2.  Receive a **RideOffersResponse** object. This is a list of **RideOffer** objects, containing details such as supplier ID, price, ETA and cancellation policy. If a sort order was specified in the request, the offer list is sorted by the order requested (lowest to highest price, or soonest to latest ETA).
 
 3.  The passenger selects one of the offers.
 
-4.  Call *CreateRide*, passing a **CreateRideRequest** object that contains the chosen offer ID. Receive a Ride object.
+4.  Call *CreateRideRequest*, passing the ID of the chosen offer. Receive a **Ride** object.
 
->**Note**: This workflow may be repeated as necessary, if a booking
-request fails.
+>**Note**: This workflow may be repeated as necessary, if a booking request fails.
 
 ### Getting the Ride Status ###
 
@@ -141,8 +140,7 @@ The client application can poll periodically to get the current ride status, in 
 
 **To get the current ride status:**
 
-Call *GetRide*. This returns a Ride object that contains
-several ride details, including its status.
+Call *GetRideRequest*. This returns a Ride object that contains several ride details, including its status.
 
 ### Getting the Ride Location ###
 
@@ -150,21 +148,20 @@ You may want to poll periodically for the ride location, so that you can display
 
 **To get the current ride location:**
 
-Call *GetRideLocation*. This returns a **RideLocation** object that contains the ride's geo-location, and optionally the estimated time of arrival at the pickup or dropoff location.
+Call *GetRideLocationRequest*. This returns a **RideLocation** object that contains the ride's geo-location, and optionally the estimated time of arrival at the pickup or dropoff location.
 
 ### Cancelling a Ride ###
 
 **To cancel a ride after it was accepted:**
 
-Call *CancelRide*.
+Call *CancelRideRequest*.
 
->**Note**: This call may fail if the booking is not active, or if the
-supplier's policy doesn't allow cancellation.
+>**Note**: This call may fail if the booking is not active, or if the supplier's policy doesn't allow cancellation.
 
 ### Reviewing Rides ###
 
 The end user may want to review past rides, future (pre-booked) rides, or rides are currently active.
 
-**To retrieve rides by their status (and optionally by their last update time):**
+**To retrieve rides by their status (or other query values):**
 
-Call *GetRides*.
+Call *GetRideListRequest*.
