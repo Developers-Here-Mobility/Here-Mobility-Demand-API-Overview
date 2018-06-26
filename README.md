@@ -110,7 +110,7 @@ The following sections describe the Demand API calls that the client application
 
 **To request and book a ride:**
 
-1.  Call *RideOffersRequest*. In the call parameters, the client specifies the passenger details, pickup and dropoff locations, and any special requirements such as a child seat. Optionally, the client can specify a future pickup time, a desired price range and a sort order for the returned ride offers.
+1.  Call *RideOffersRequest*. In the call parameters, the client specifies the passenger details, pickup and dropoff locations, and optionally the number of suitcases the ride must accommodate. Optionally, the client can specify a future pickup time, a desired price range and a sort order for the returned ride offers.
 
 2.  Receive a **RideOffersResponse** object. This is a list of **RideOffer** objects, containing details such as supplier ID, price, ETA and cancellation policy. If a sort order was specified in the request, the offer list is sorted by the order requested (lowest to highest price, or soonest to latest ETA).
 
