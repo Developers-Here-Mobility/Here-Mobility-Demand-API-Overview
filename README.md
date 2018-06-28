@@ -102,7 +102,7 @@ The HERE Mobility service directs your app's calls to the sandbox or to the prod
 
 The diagram below illustrates the workflow for booking a ride and updating its status during the ride.
 
-<img src="./BookRideWorkflow.png">
+<img src="./BookRideDemandSideOnly.png">
 
 The following sections describe the Demand API calls that the client application makes when implementing common mobility workflows.
 
