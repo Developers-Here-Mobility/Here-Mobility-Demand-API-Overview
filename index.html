@@ -1,0 +1,1950 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Protocol Documentation</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic"/>
+    <style>
+      body {
+        width: 60em;
+        margin: 1em auto;
+        color: #222;
+        font-family: "Ubuntu", sans-serif;
+        padding-bottom: 4em;
+      }
+
+      h1 {
+        font-weight: normal;
+        border-bottom: 1px solid #aaa;
+        padding-bottom: 0.5ex;
+      }
+
+      h2 {
+        border-bottom: 1px solid #aaa;
+        padding-bottom: 0.5ex;
+        margin: 1.5em 0;
+      }
+
+      h3 {
+        font-weight: normal;
+        border-bottom: 1px solid #aaa;
+        padding-bottom: 0.5ex;
+      }
+
+      a {
+        text-decoration: none;
+        color: #567e25;
+      }
+
+      table {
+        width: 100%;
+        font-size: 80%;
+        border-collapse: collapse;
+      }
+
+      thead {
+        font-weight: 700;
+        background-color: #dcdcdc;
+      }
+
+      tbody tr:nth-child(even) {
+        background-color: #fbfbfb;
+      }
+
+      td {
+        border: 1px solid #ccc;
+        padding: 0.5ex 2ex;
+      }
+
+      td p {
+        text-indent: 1em;
+        margin: 0;
+      }
+
+      td p:nth-child(1) {
+        text-indent: 0;  
+      }
+
+       
+      .field-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .field-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .field-table td:nth-child(3) {  
+        width: 6em;
+      }
+      .field-table td:nth-child(4) {  
+        width: auto;
+      }
+
+       
+      .extension-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(3) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(4) {  
+        width: 5em;
+      }
+      .extension-table td:nth-child(5) {  
+        width: auto;
+      }
+
+       
+      .enum-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .enum-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .enum-table td:nth-child(3) {  
+        width: auto;
+      }
+
+       
+      .scalar-value-types-table tr {
+        height: 3em;
+      }
+
+       
+      #toc-container ul {
+        list-style-type: none;
+        padding-left: 1em;
+        line-height: 180%;
+        margin: 0;
+      }
+      #toc > li > a {
+        font-weight: bold;
+      }
+
+       
+      .file-heading {
+        width: 100%;
+        display: table;
+        border-bottom: 1px solid #aaa;
+        margin: 4em 0 1.5em 0;
+      }
+      .file-heading h2 {
+        border: none;
+        display: table-cell;
+      }
+      .file-heading a {
+        text-align: right;
+        display: table-cell;
+      }
+
+       
+      .badge {
+        width: 1.6em;
+        height: 1.6em;
+        display: inline-block;
+
+        line-height: 1.6em;
+        text-align: center;
+        font-weight: bold;
+        font-size: 60%;
+
+        color: #89ba48;
+        background-color: #dff0c8;
+
+        margin: 0.5ex 1em 0.5ex -1em;
+        border: 1px solid #fbfbfb;
+        border-radius: 1ex;
+      }
+    </style>
+
+    
+    <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+  </head>
+
+  <body>
+
+    <h1 id="title">Protocol Documentation</h1>
+
+    <h2>Table of Contents</h2>
+
+    <div id="toc-container">
+      <ul id="toc">
+        
+          
+          <li>
+            <a href="#marketplace%2fpublic%2fgrpc%2fsupply_handler%2fvNext%2fgen-doc%2fsupply_handler_common.proto">marketplace/public/grpc/supply_handler/vNext/gen-doc/supply_handler_common.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#supply.common.vNext.Address"><span class="badge">M</span>Address</a>
+                </li>
+              
+                <li>
+                  <a href="#supply.common.vNext.DriverDetails"><span class="badge">M</span>DriverDetails</a>
+                </li>
+              
+                <li>
+                  <a href="#supply.common.vNext.Empty"><span class="badge">M</span>Empty</a>
+                </li>
+              
+                <li>
+                  <a href="#supply.common.vNext.Location"><span class="badge">M</span>Location</a>
+                </li>
+              
+                <li>
+                  <a href="#supply.common.vNext.PassengerDetails"><span class="badge">M</span>PassengerDetails</a>
+                </li>
+              
+                <li>
+                  <a href="#supply.common.vNext.Point"><span class="badge">M</span>Point</a>
+                </li>
+              
+                <li>
+                  <a href="#supply.common.vNext.Price"><span class="badge">M</span>Price</a>
+                </li>
+              
+                <li>
+                  <a href="#supply.common.vNext.UnixTime"><span class="badge">M</span>UnixTime</a>
+                </li>
+              
+                <li>
+                  <a href="#supply.common.vNext.Vehicle"><span class="badge">M</span>Vehicle</a>
+                </li>
+              
+              
+                <li>
+                  <a href="#supply.common.vNext.Vehicle.VehicleType"><span class="badge">E</span>Vehicle.VehicleType</a>
+                </li>
+              
+              
+              
+            </ul>
+          </li>
+        
+          
+          <li>
+            <a href="#marketplace%2fpublic%2fgrpc%2fsupply_handler%2fvNext%2fgen-doc%2fsupply_handler_rides_messages.proto">marketplace/public/grpc/supply_handler/vNext/gen-doc/supply_handler_rides_messages.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#supply.rides.vNext.CreateSimpleRideRequest"><span class="badge">M</span>CreateSimpleRideRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#supply.rides.vNext.DemanderCancelRideRequest"><span class="badge">M</span>DemanderCancelRideRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#supply.rides.vNext.GetRideStatusRequest"><span class="badge">M</span>GetRideStatusRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#supply.rides.vNext.GetSimpleRideOffersRequest"><span class="badge">M</span>GetSimpleRideOffersRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#supply.rides.vNext.RideEtaUpdate"><span class="badge">M</span>RideEtaUpdate</a>
+                </li>
+              
+                <li>
+                  <a href="#supply.rides.vNext.RideLocationUpdate"><span class="badge">M</span>RideLocationUpdate</a>
+                </li>
+              
+                <li>
+                  <a href="#supply.rides.vNext.RidePickupAndDestinationUpdate"><span class="badge">M</span>RidePickupAndDestinationUpdate</a>
+                </li>
+              
+                <li>
+                  <a href="#supply.rides.vNext.RidePriceUpdate"><span class="badge">M</span>RidePriceUpdate</a>
+                </li>
+              
+                <li>
+                  <a href="#supply.rides.vNext.RideVehicleAndDriverUpdate"><span class="badge">M</span>RideVehicleAndDriverUpdate</a>
+                </li>
+              
+                <li>
+                  <a href="#supply.rides.vNext.SimpleRideBookingConstraints"><span class="badge">M</span>SimpleRideBookingConstraints</a>
+                </li>
+              
+                <li>
+                  <a href="#supply.rides.vNext.SimpleRideDetails"><span class="badge">M</span>SimpleRideDetails</a>
+                </li>
+              
+                <li>
+                  <a href="#supply.rides.vNext.SimpleRideOffer"><span class="badge">M</span>SimpleRideOffer</a>
+                </li>
+              
+                <li>
+                  <a href="#supply.rides.vNext.SimpleRideOffers"><span class="badge">M</span>SimpleRideOffers</a>
+                </li>
+              
+                <li>
+                  <a href="#supply.rides.vNext.SupplierCancelRideRequest"><span class="badge">M</span>SupplierCancelRideRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#supply.rides.vNext.SupplierRideStatus"><span class="badge">M</span>SupplierRideStatus</a>
+                </li>
+              
+                <li>
+                  <a href="#supply.rides.vNext.SupplierRideStatusUpdate"><span class="badge">M</span>SupplierRideStatusUpdate</a>
+                </li>
+              
+              
+                <li>
+                  <a href="#supply.rides.vNext.SupplierRideStatus.RideStatus"><span class="badge">E</span>SupplierRideStatus.RideStatus</a>
+                </li>
+              
+                <li>
+                  <a href="#supply.rides.vNext.SupplierRideStatusUpdate.RideStatus"><span class="badge">E</span>SupplierRideStatusUpdate.RideStatus</a>
+                </li>
+              
+              
+              
+            </ul>
+          </li>
+        
+          
+          <li>
+            <a href="#marketplace%2fpublic%2fgrpc%2fsupply_handler%2fvNext%2fgen-doc%2fsupply_handler_rides_service.proto">marketplace/public/grpc/supply_handler/vNext/gen-doc/supply_handler_rides_service.proto</a>
+            <ul>
+              
+              
+              
+              
+                <li>
+                  <a href="#supply.rides.vNext.RidesDispatchApi"><span class="badge">S</span>RidesDispatchApi</a>
+                </li>
+              
+                <li>
+                  <a href="#supply.rides.vNext.RidesSupplyApi"><span class="badge">S</span>RidesSupplyApi</a>
+                </li>
+              
+            </ul>
+          </li>
+        
+          
+          <li>
+            <a href="#marketplace%2fpublic%2fgrpc%2fsupply_handler%2fvNext%2fgen-doc%2fsupply_handler_shared_rides_messages.proto">marketplace/public/grpc/supply_handler/vNext/gen-doc/supply_handler_shared_rides_messages.proto</a>
+            <ul>
+              
+              
+              
+              
+            </ul>
+          </li>
+        
+          
+          <li>
+            <a href="#marketplace%2fpublic%2fgrpc%2fsupply_handler%2fvNext%2fgen-doc%2fsupply_handler_shared_rides_service.proto">marketplace/public/grpc/supply_handler/vNext/gen-doc/supply_handler_shared_rides_service.proto</a>
+            <ul>
+              
+              
+              
+              
+            </ul>
+          </li>
+        
+        <li><a href="#scalar-value-types">Scalar Value Types</a></li>
+      </ul>
+    </div>
+
+    
+      
+      <div class="file-heading">
+        <h2 id="marketplace/public/grpc/supply_handler/vNext/gen-doc/supply_handler_common.proto">marketplace/public/grpc/supply_handler/vNext/gen-doc/supply_handler_common.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+      
+        <h3 id="supply.common.vNext.Address">Address</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>country</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Mandatory, full country name </p></td>
+                </tr>
+              
+                <tr>
+                  <td>state</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>State is usually optional but may be require in some countries (such as US) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>county</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>County is optional </p></td>
+                </tr>
+              
+                <tr>
+                  <td>city</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Mandatory </p></td>
+                </tr>
+              
+                <tr>
+                  <td>district</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>District is usually optional but may be required in some European cities </p></td>
+                </tr>
+              
+                <tr>
+                  <td>street</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>street name </p></td>
+                </tr>
+              
+                <tr>
+                  <td>house_number</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Optional house number </p></td>
+                </tr>
+              
+                <tr>
+                  <td>zip_code</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Zip Code is usually optional </p></td>
+                </tr>
+              
+                <tr>
+                  <td>description</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Description is optional </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="supply.common.vNext.DriverDetails">DriverDetails</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>driver_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Unique Id of the driver in the dispatcher system (required) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Full name of the driver, in English (required) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>phone</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Phone number though which the driver is reachable (required) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>picture_url</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>URL of a driver photo (required by some jurisdictions) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>driving_license_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>License id of the driver (required by some jurisdictions) </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="supply.common.vNext.Empty">Empty</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="supply.common.vNext.Location">Location</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>point</td>
+                  <td><a href="#supply.common.vNext.Point">Point</a></td>
+                  <td></td>
+                  <td><p>geographic coordinates (latitude, longtitude) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>address</td>
+                  <td><a href="#supply.common.vNext.Address">Address</a></td>
+                  <td></td>
+                  <td><p>description, state and zip code are optional, rest are mandatory </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="supply.common.vNext.PassengerDetails">PassengerDetails</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Full name of the passenger </p></td>
+                </tr>
+              
+                <tr>
+                  <td>phone_number</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Phone number in full international format </p></td>
+                </tr>
+              
+                <tr>
+                  <td>photo_url</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Optional URL </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="supply.common.vNext.Point">Point</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>lat</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>Latitude </p></td>
+                </tr>
+              
+                <tr>
+                  <td>lng</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>Longtitude </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="supply.common.vNext.Price">Price</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>fixed</td>
+                  <td><a href="#uint64">uint64</a></td>
+                  <td></td>
+                  <td><p>Amount in cents. Fixed price means a price which the supplier commits to in advance. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>lower_bound</td>
+                  <td><a href="#uint64">uint64</a></td>
+                  <td></td>
+                  <td><p>Amount in cents. Lower bound of an estimated price. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>upper_bound</td>
+                  <td><a href="#uint64">uint64</a></td>
+                  <td></td>
+                  <td><p>Amount in cents. Lower bound of an estimated price. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>currency</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>ISO 4217 code </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="supply.common.vNext.UnixTime">UnixTime</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>eta_ms</td>
+                  <td><a href="#uint64">uint64</a></td>
+                  <td></td>
+                  <td><p>Seconds since epoch until ETA </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="supply.common.vNext.Vehicle">Vehicle</h3>
+        <p>Vehicle details</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>license_plate_number</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>The vehicle’s license plate number </p></td>
+                </tr>
+              
+                <tr>
+                  <td>vehicle_type</td>
+                  <td><a href="#supply.common.vNext.Vehicle.VehicleType">Vehicle.VehicleType</a></td>
+                  <td></td>
+                  <td><p>The vehicle type (standard, limo, van) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>make</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>The vehicle make </p></td>
+                </tr>
+              
+                <tr>
+                  <td>model</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>The vehicle model </p></td>
+                </tr>
+              
+                <tr>
+                  <td>color</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>The vehicle color </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+
+      
+        <h3 id="supply.common.vNext.Vehicle.VehicleType">Vehicle.VehicleType</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>UNKNOWN</td>
+                <td>0</td>
+                <td><p>Default value - unknown vehicle type</p></td>
+              </tr>
+            
+              <tr>
+                <td>STANDARD</td>
+                <td>1</td>
+                <td><p>Standard vehicle</p></td>
+              </tr>
+            
+              <tr>
+                <td>LIMO</td>
+                <td>2</td>
+                <td><p>Limousine</p></td>
+              </tr>
+            
+              <tr>
+                <td>VAN</td>
+                <td>3</td>
+                <td><p>Van</p></td>
+              </tr>
+            
+              <tr>
+                <td>OTHER</td>
+                <td>4</td>
+                <td><p>Other known type - not specified</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+
+      
+
+      
+    
+      
+      <div class="file-heading">
+        <h2 id="marketplace/public/grpc/supply_handler/vNext/gen-doc/supply_handler_rides_messages.proto">marketplace/public/grpc/supply_handler/vNext/gen-doc/supply_handler_rides_messages.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+      
+        <h3 id="supply.rides.vNext.CreateSimpleRideRequest">CreateSimpleRideRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>supplier_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Marketplace if of the supplier for which we want to create the ride </p></td>
+                </tr>
+              
+                <tr>
+                  <td>ride_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Marketplace generated ride id which will be used to identify this ride </p></td>
+                </tr>
+              
+                <tr>
+                  <td>ride_details</td>
+                  <td><a href="#supply.rides.vNext.SimpleRideDetails">SimpleRideDetails</a></td>
+                  <td></td>
+                  <td><p>Details of the ride creation request </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="supply.rides.vNext.DemanderCancelRideRequest">DemanderCancelRideRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>supplier_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Marketplace generated supplier id </p></td>
+                </tr>
+              
+                <tr>
+                  <td>ride_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Marketplace generated ride id </p></td>
+                </tr>
+              
+                <tr>
+                  <td>reason</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Cancellation reason </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="supply.rides.vNext.GetRideStatusRequest">GetRideStatusRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>supplier_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Marketplace generated supplier id </p></td>
+                </tr>
+              
+                <tr>
+                  <td>ride_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Marketplace generated ride id </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="supply.rides.vNext.GetSimpleRideOffersRequest">GetSimpleRideOffersRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>request_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Unique request id generated by the markeplace </p></td>
+                </tr>
+              
+                <tr>
+                  <td>supplier_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Marketplace ID of the supplier from which we want offers </p></td>
+                </tr>
+              
+                <tr>
+                  <td>origin</td>
+                  <td><a href="#supply.common.vNext.Location">supply.common.vNext.Location</a></td>
+                  <td></td>
+                  <td><p>Origin of the ride (pickup location) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>destination</td>
+                  <td><a href="#supply.common.vNext.Location">supply.common.vNext.Location</a></td>
+                  <td></td>
+                  <td><p>Destination of the ride (dropoff location) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>constraints</td>
+                  <td><a href="#supply.rides.vNext.SimpleRideBookingConstraints">SimpleRideBookingConstraints</a></td>
+                  <td></td>
+                  <td><p>Constraints represent the requested ride parameters </p></td>
+                </tr>
+              
+                <tr>
+                  <td>pickup_time</td>
+                  <td><a href="#supply.common.vNext.UnixTime">supply.common.vNext.UnixTime</a></td>
+                  <td></td>
+                  <td><p>Pickup time </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="supply.rides.vNext.RideEtaUpdate">RideEtaUpdate</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>supplier_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Marketplace generated supplier id </p></td>
+                </tr>
+              
+                <tr>
+                  <td>ride_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Marketplace generated ride id </p></td>
+                </tr>
+              
+                <tr>
+                  <td>eta_to_pickup</td>
+                  <td><a href="#supply.common.vNext.UnixTime">supply.common.vNext.UnixTime</a></td>
+                  <td></td>
+                  <td><p>Updated estimated time till pickup </p></td>
+                </tr>
+              
+                <tr>
+                  <td>eta_to_destination</td>
+                  <td><a href="#supply.common.vNext.UnixTime">supply.common.vNext.UnixTime</a></td>
+                  <td></td>
+                  <td><p>Updated estimated time till destination </p></td>
+                </tr>
+              
+                <tr>
+                  <td>update_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Dispatcher-generated id which uniquely identifies this update </p></td>
+                </tr>
+              
+                <tr>
+                  <td>update_ts</td>
+                  <td><a href="#supply.common.vNext.UnixTime">supply.common.vNext.UnixTime</a></td>
+                  <td></td>
+                  <td><p>Dispatcher-generated timestamp which identifies the update time </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="supply.rides.vNext.RideLocationUpdate">RideLocationUpdate</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>supplier_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Marketplace generated supplier id </p></td>
+                </tr>
+              
+                <tr>
+                  <td>ride_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Marketplace generated ride id </p></td>
+                </tr>
+              
+                <tr>
+                  <td>current_location</td>
+                  <td><a href="#supply.common.vNext.Point">supply.common.vNext.Point</a></td>
+                  <td></td>
+                  <td><p>Updated location of the vehicle </p></td>
+                </tr>
+              
+                <tr>
+                  <td>update_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Dispatcher-generated id which uniquely identifies this update </p></td>
+                </tr>
+              
+                <tr>
+                  <td>update_ts</td>
+                  <td><a href="#supply.common.vNext.UnixTime">supply.common.vNext.UnixTime</a></td>
+                  <td></td>
+                  <td><p>Dispatcher-generated timestamp which identifies the update time </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="supply.rides.vNext.RidePickupAndDestinationUpdate">RidePickupAndDestinationUpdate</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>supplier_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Marketplace generated supplier id </p></td>
+                </tr>
+              
+                <tr>
+                  <td>ride_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Marketplace generated ride id </p></td>
+                </tr>
+              
+                <tr>
+                  <td>pickup</td>
+                  <td><a href="#supply.common.vNext.Location">supply.common.vNext.Location</a></td>
+                  <td></td>
+                  <td><p>Updated pickup location </p></td>
+                </tr>
+              
+                <tr>
+                  <td>destination</td>
+                  <td><a href="#supply.common.vNext.Location">supply.common.vNext.Location</a></td>
+                  <td></td>
+                  <td><p>Updated destination location </p></td>
+                </tr>
+              
+                <tr>
+                  <td>eta_to_pickup</td>
+                  <td><a href="#supply.common.vNext.UnixTime">supply.common.vNext.UnixTime</a></td>
+                  <td></td>
+                  <td><p>Updated estimated time of arrival to pickup </p></td>
+                </tr>
+              
+                <tr>
+                  <td>eta_to_destination</td>
+                  <td><a href="#supply.common.vNext.UnixTime">supply.common.vNext.UnixTime</a></td>
+                  <td></td>
+                  <td><p>Updated estimated time of arrival to destination </p></td>
+                </tr>
+              
+                <tr>
+                  <td>update_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Dispatcher-generated id which uniquely identifies this update </p></td>
+                </tr>
+              
+                <tr>
+                  <td>update_ts</td>
+                  <td><a href="#supply.common.vNext.UnixTime">supply.common.vNext.UnixTime</a></td>
+                  <td></td>
+                  <td><p>Dispatcher-generated timestamp which identifies the update time </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="supply.rides.vNext.RidePriceUpdate">RidePriceUpdate</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>supplier_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Marketplace generated supplier id </p></td>
+                </tr>
+              
+                <tr>
+                  <td>ride_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Marketplace generated ride id </p></td>
+                </tr>
+              
+                <tr>
+                  <td>estimated_price</td>
+                  <td><a href="#supply.common.vNext.Price">supply.common.vNext.Price</a></td>
+                  <td></td>
+                  <td><p>Updated estimated price </p></td>
+                </tr>
+              
+                <tr>
+                  <td>actual_price</td>
+                  <td><a href="#supply.common.vNext.Price">supply.common.vNext.Price</a></td>
+                  <td></td>
+                  <td><p>Updated actual price of the ride </p></td>
+                </tr>
+              
+                <tr>
+                  <td>update_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Dispatcher-generated id which uniquely identifies this update </p></td>
+                </tr>
+              
+                <tr>
+                  <td>update_ts</td>
+                  <td><a href="#supply.common.vNext.UnixTime">supply.common.vNext.UnixTime</a></td>
+                  <td></td>
+                  <td><p>Dispatcher-generated timestamp which identifies the update time </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="supply.rides.vNext.RideVehicleAndDriverUpdate">RideVehicleAndDriverUpdate</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>supplier_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Marketplace generated supplier id </p></td>
+                </tr>
+              
+                <tr>
+                  <td>ride_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Marketplace generated ride id </p></td>
+                </tr>
+              
+                <tr>
+                  <td>vehicle</td>
+                  <td><a href="#supply.common.vNext.Vehicle">supply.common.vNext.Vehicle</a></td>
+                  <td></td>
+                  <td><p>Updated vehicle </p></td>
+                </tr>
+              
+                <tr>
+                  <td>driver</td>
+                  <td><a href="#supply.common.vNext.DriverDetails">supply.common.vNext.DriverDetails</a></td>
+                  <td></td>
+                  <td><p>Updated driver </p></td>
+                </tr>
+              
+                <tr>
+                  <td>update_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Dispatcher-generated id which uniquely identifies this update </p></td>
+                </tr>
+              
+                <tr>
+                  <td>update_ts</td>
+                  <td><a href="#supply.common.vNext.UnixTime">supply.common.vNext.UnixTime</a></td>
+                  <td></td>
+                  <td><p>Dispatcher-generated timestamp which identifies the update time </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="supply.rides.vNext.SimpleRideBookingConstraints">SimpleRideBookingConstraints</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>passengers_no</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>Number of pasengers </p></td>
+                </tr>
+              
+                <tr>
+                  <td>suitcases_no</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>Number of suitcases </p></td>
+                </tr>
+              
+                <tr>
+                  <td>wheelchair</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>Wheelchair-accessible </p></td>
+                </tr>
+              
+                <tr>
+                  <td>child_seats</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>Number of child seats (in addition to passengers) </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="supply.rides.vNext.SimpleRideDetails">SimpleRideDetails</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>origin</td>
+                  <td><a href="#supply.common.vNext.Location">supply.common.vNext.Location</a></td>
+                  <td></td>
+                  <td><p>Origin of the ride </p></td>
+                </tr>
+              
+                <tr>
+                  <td>destination</td>
+                  <td><a href="#supply.common.vNext.Location">supply.common.vNext.Location</a></td>
+                  <td></td>
+                  <td><p>Destination of the ride </p></td>
+                </tr>
+              
+                <tr>
+                  <td>constraints</td>
+                  <td><a href="#supply.rides.vNext.SimpleRideBookingConstraints">SimpleRideBookingConstraints</a></td>
+                  <td></td>
+                  <td><p>Special requests of the client </p></td>
+                </tr>
+              
+                <tr>
+                  <td>passenger_details</td>
+                  <td><a href="#supply.common.vNext.PassengerDetails">supply.common.vNext.PassengerDetails</a></td>
+                  <td></td>
+                  <td><p>Details of the passenger </p></td>
+                </tr>
+              
+                <tr>
+                  <td>pickup_time</td>
+                  <td><a href="#supply.common.vNext.UnixTime">supply.common.vNext.UnixTime</a></td>
+                  <td></td>
+                  <td><p>Requested pickuo time </p></td>
+                </tr>
+              
+                <tr>
+                  <td>comment</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Free-text comments by the passanger </p></td>
+                </tr>
+              
+                <tr>
+                  <td>dispatcher_offer_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Supplier generated unique offer ID. See SimpleRideOffer </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="supply.rides.vNext.SimpleRideOffer">SimpleRideOffer</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>dispatcher_offer_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Supplier generated unique offer ID. Relevant only for selectable offers </p></td>
+                </tr>
+              
+                <tr>
+                  <td>pickup_eta</td>
+                  <td><a href="#supply.common.vNext.UnixTime">supply.common.vNext.UnixTime</a></td>
+                  <td></td>
+                  <td><p>Estimated pickup time </p></td>
+                </tr>
+              
+                <tr>
+                  <td>dropoff_eta</td>
+                  <td><a href="#supply.common.vNext.UnixTime">supply.common.vNext.UnixTime</a></td>
+                  <td></td>
+                  <td><p>Estimated dropoff time </p></td>
+                </tr>
+              
+                <tr>
+                  <td>estimated_price</td>
+                  <td><a href="#supply.common.vNext.Price">supply.common.vNext.Price</a></td>
+                  <td></td>
+                  <td><p>Estimated price </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="supply.rides.vNext.SimpleRideOffers">SimpleRideOffers</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>request_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Set to the request_id received in the original GetSimpleRideOffersRequest </p></td>
+                </tr>
+              
+                <tr>
+                  <td>is_selectable</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>An offer is selectable if during ride creation, demander can ask for this specific offer to be used to create the ride </p></td>
+                </tr>
+              
+                <tr>
+                  <td>offers</td>
+                  <td><a href="#supply.rides.vNext.SimpleRideOffer">SimpleRideOffer</a></td>
+                  <td>repeated</td>
+                  <td><p>A set of offers </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="supply.rides.vNext.SupplierCancelRideRequest">SupplierCancelRideRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>supplier_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Marketplace generated supplier id </p></td>
+                </tr>
+              
+                <tr>
+                  <td>ride_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Marketplace generated ride id </p></td>
+                </tr>
+              
+                <tr>
+                  <td>reason</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Cancellation reason </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="supply.rides.vNext.SupplierRideStatus">SupplierRideStatus</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>supplier_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Marketplace generated supplier id </p></td>
+                </tr>
+              
+                <tr>
+                  <td>ride_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Marketplace generated ride id </p></td>
+                </tr>
+              
+                <tr>
+                  <td>status_code</td>
+                  <td><a href="#supply.rides.vNext.SupplierRideStatus.RideStatus">SupplierRideStatus.RideStatus</a></td>
+                  <td></td>
+                  <td><p>Current status of te ride </p></td>
+                </tr>
+              
+                <tr>
+                  <td>status_information</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Additional information regarding the current state </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="supply.rides.vNext.SupplierRideStatusUpdate">SupplierRideStatusUpdate</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>supplier_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Marketplace generated supplier id </p></td>
+                </tr>
+              
+                <tr>
+                  <td>ride_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Marketplace generated ride id </p></td>
+                </tr>
+              
+                <tr>
+                  <td>status_code</td>
+                  <td><a href="#supply.rides.vNext.SupplierRideStatusUpdate.RideStatus">SupplierRideStatusUpdate.RideStatus</a></td>
+                  <td></td>
+                  <td><p>Current status of te ride </p></td>
+                </tr>
+              
+                <tr>
+                  <td>status_information</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Additional information regarding the current state </p></td>
+                </tr>
+              
+                <tr>
+                  <td>update_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Dispatcher-generated id which uniquely identifies this update </p></td>
+                </tr>
+              
+                <tr>
+                  <td>update_ts</td>
+                  <td><a href="#supply.common.vNext.UnixTime">supply.common.vNext.UnixTime</a></td>
+                  <td></td>
+                  <td><p>Dispatcher-generated timestamp which identifies the update time </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+
+      
+        <h3 id="supply.rides.vNext.SupplierRideStatus.RideStatus">SupplierRideStatus.RideStatus</h3>
+        <p>RideStatus represents the different statuses a ride can be at</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>UNKNOWN</td>
+                <td>0</td>
+                <td><p>Status is unknown</p></td>
+              </tr>
+            
+              <tr>
+                <td>SUPPLIER_CONFIRMED</td>
+                <td>1</td>
+                <td><p>Supplier confirmed the ride, but driver is not yet allocated</p></td>
+              </tr>
+            
+              <tr>
+                <td>DRIVER_ALLOCATED</td>
+                <td>2</td>
+                <td><p>Driver is allocated, but ride has not yet started</p></td>
+              </tr>
+            
+              <tr>
+                <td>DRIVER_EN_ROUTE</td>
+                <td>3</td>
+                <td><p>Drive started and driver is en-route</p></td>
+              </tr>
+            
+              <tr>
+                <td>DRIVER_POINT_OF_BOOKING</td>
+                <td>4</td>
+                <td><p>Driver is arrived at the pickup point, but passenger is not yet on board</p></td>
+              </tr>
+            
+              <tr>
+                <td>PASSANGER_ON_BOARD</td>
+                <td>5</td>
+                <td><p>Passenger is on board and drive to destination starterd</p></td>
+              </tr>
+            
+              <tr>
+                <td>DONE</td>
+                <td>6</td>
+                <td><p>Ride complete and passenger disembarked</p></td>
+              </tr>
+            
+              <tr>
+                <td>CANCELED</td>
+                <td>7</td>
+                <td><p>Ride is cancelled (due to supplier or due to demander)</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+        <h3 id="supply.rides.vNext.SupplierRideStatusUpdate.RideStatus">SupplierRideStatusUpdate.RideStatus</h3>
+        <p>RideStatus represents the different statuses a ride can be at</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>UNKNOWN</td>
+                <td>0</td>
+                <td><p>Status is unknown</p></td>
+              </tr>
+            
+              <tr>
+                <td>SUPPLIER_CONFIRMED</td>
+                <td>1</td>
+                <td><p>Supplier confirmed the ride, but driver is not yet allocated</p></td>
+              </tr>
+            
+              <tr>
+                <td>DRIVER_ALLOCATED</td>
+                <td>2</td>
+                <td><p>Driver is allocated, but ride has not yet started</p></td>
+              </tr>
+            
+              <tr>
+                <td>DRIVER_EN_ROUTE</td>
+                <td>3</td>
+                <td><p>Drive started and driver is en-route</p></td>
+              </tr>
+            
+              <tr>
+                <td>DRIVER_POINT_OF_BOOKING</td>
+                <td>4</td>
+                <td><p>Driver is arrived at the pickup point, but passenger is not yet on board</p></td>
+              </tr>
+            
+              <tr>
+                <td>PASSANGER_ON_BOARD</td>
+                <td>5</td>
+                <td><p>Passenger is on board and drive to destination starterd</p></td>
+              </tr>
+            
+              <tr>
+                <td>DONE</td>
+                <td>6</td>
+                <td><p>Ride complete and passenger disembarked</p></td>
+              </tr>
+            
+              <tr>
+                <td>CANCELED</td>
+                <td>7</td>
+                <td><p>Ride is cancelled (due to supplier or due to demander)</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+
+      
+
+      
+    
+      
+      <div class="file-heading">
+        <h2 id="marketplace/public/grpc/supply_handler/vNext/gen-doc/supply_handler_rides_service.proto">marketplace/public/grpc/supply_handler/vNext/gen-doc/supply_handler_rides_service.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+      
+
+      
+
+      
+
+      
+        <h3 id="supply.rides.vNext.RidesDispatchApi">RidesDispatchApi</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>RequestOffers</td>
+                <td><a href="#supply.rides.vNext.GetSimpleRideOffersRequest">GetSimpleRideOffersRequest</a></td>
+                <td><a href="#supply.rides.vNext.SimpleRideOffers">SimpleRideOffers</a></td>
+                <td><p>Request ride offers from the supplier</p></td>
+              </tr>
+            
+              <tr>
+                <td>CreateRide</td>
+                <td><a href="#supply.rides.vNext.CreateSimpleRideRequest">CreateSimpleRideRequest</a></td>
+                <td><a href="#supply.common.vNext.Empty">.supply.common.vNext.Empty</a></td>
+                <td><p>Create a ride with the supplier</p></td>
+              </tr>
+            
+              <tr>
+                <td>CancelRide</td>
+                <td><a href="#supply.rides.vNext.DemanderCancelRideRequest">DemanderCancelRideRequest</a></td>
+                <td><a href="#supply.common.vNext.Empty">.supply.common.vNext.Empty</a></td>
+                <td><p>Update the supplier that the demander has cancelled the ride.</p></td>
+              </tr>
+            
+              <tr>
+                <td>GetRideStatus</td>
+                <td><a href="#supply.rides.vNext.GetRideStatusRequest">GetRideStatusRequest</a></td>
+                <td><a href="#supply.rides.vNext.SupplierRideStatus">SupplierRideStatus</a></td>
+                <td><p>Request the latest status of the ride from the supplier</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+        <h3 id="supply.rides.vNext.RidesSupplyApi">RidesSupplyApi</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>UpdateRideStatus</td>
+                <td><a href="#supply.rides.vNext.SupplierRideStatusUpdate">SupplierRideStatusUpdate</a></td>
+                <td><a href="#supply.common.vNext.Empty">.supply.common.vNext.Empty</a></td>
+                <td><p>Update the marketplace that the ride status changed</p></td>
+              </tr>
+            
+              <tr>
+                <td>UpdateRideLocation</td>
+                <td><a href="#supply.rides.vNext.RideLocationUpdate">RideLocationUpdate</a></td>
+                <td><a href="#supply.common.vNext.Empty">.supply.common.vNext.Empty</a></td>
+                <td><p>Update the marketplace that the vehicle location has changed</p></td>
+              </tr>
+            
+              <tr>
+                <td>UpdateRideVehicleAndDriver</td>
+                <td><a href="#supply.rides.vNext.RideVehicleAndDriverUpdate">RideVehicleAndDriverUpdate</a></td>
+                <td><a href="#supply.common.vNext.Empty">.supply.common.vNext.Empty</a></td>
+                <td><p>Update the marketplace that the assigned vehicle and driver have changed</p></td>
+              </tr>
+            
+              <tr>
+                <td>UpdateRideEta</td>
+                <td><a href="#supply.rides.vNext.RideEtaUpdate">RideEtaUpdate</a></td>
+                <td><a href="#supply.common.vNext.Empty">.supply.common.vNext.Empty</a></td>
+                <td><p>Update the marketplace that estimated time to arrival to the origin and and to destination has changed
+Recommended to update only when there is a major change (1 minute at least)</p></td>
+              </tr>
+            
+              <tr>
+                <td>UpdateRidePrice</td>
+                <td><a href="#supply.rides.vNext.RidePriceUpdate">RidePriceUpdate</a></td>
+                <td><a href="#supply.common.vNext.Empty">.supply.common.vNext.Empty</a></td>
+                <td><p>Update the marketplace that the ride price has changed</p></td>
+              </tr>
+            
+              <tr>
+                <td>CancelRide</td>
+                <td><a href="#supply.rides.vNext.SupplierCancelRideRequest">SupplierCancelRideRequest</a></td>
+                <td><a href="#supply.common.vNext.Empty">.supply.common.vNext.Empty</a></td>
+                <td><p>Update the marketplace that the assigned supplier has cancelled the ride</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+    
+      
+      <div class="file-heading">
+        <h2 id="marketplace/public/grpc/supply_handler/vNext/gen-doc/supply_handler_shared_rides_messages.proto">marketplace/public/grpc/supply_handler/vNext/gen-doc/supply_handler_shared_rides_messages.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+      
+
+      
+
+      
+
+      
+    
+      
+      <div class="file-heading">
+        <h2 id="marketplace/public/grpc/supply_handler/vNext/gen-doc/supply_handler_shared_rides_service.proto">marketplace/public/grpc/supply_handler/vNext/gen-doc/supply_handler_shared_rides_service.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+      
+
+      
+
+      
+
+      
+    
+
+    <h2 id="scalar-value-types">Scalar Value Types</h2>
+    <table class="scalar-value-types-table">
+      <thead>
+        <tr><td>.proto Type</td><td>Notes</td><td>C++ Type</td><td>Java Type</td><td>Python Type</td></tr>
+      </thead>
+      <tbody>
+        
+          <tr id="double">
+            <td>double</td>
+            <td></td>
+            <td>double</td>
+            <td>double</td>
+            <td>float</td>
+          </tr>
+        
+          <tr id="float">
+            <td>float</td>
+            <td></td>
+            <td>float</td>
+            <td>float</td>
+            <td>float</td>
+          </tr>
+        
+          <tr id="int32">
+            <td>int32</td>
+            <td>Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint32 instead.</td>
+            <td>int32</td>
+            <td>int</td>
+            <td>int</td>
+          </tr>
+        
+          <tr id="int64">
+            <td>int64</td>
+            <td>Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint64 instead.</td>
+            <td>int64</td>
+            <td>long</td>
+            <td>int/long</td>
+          </tr>
+        
+          <tr id="uint32">
+            <td>uint32</td>
+            <td>Uses variable-length encoding.</td>
+            <td>uint32</td>
+            <td>int</td>
+            <td>int/long</td>
+          </tr>
+        
+          <tr id="uint64">
+            <td>uint64</td>
+            <td>Uses variable-length encoding.</td>
+            <td>uint64</td>
+            <td>long</td>
+            <td>int/long</td>
+          </tr>
+        
+          <tr id="sint32">
+            <td>sint32</td>
+            <td>Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int32s.</td>
+            <td>int32</td>
+            <td>int</td>
+            <td>int</td>
+          </tr>
+        
+          <tr id="sint64">
+            <td>sint64</td>
+            <td>Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int64s.</td>
+            <td>int64</td>
+            <td>long</td>
+            <td>int/long</td>
+          </tr>
+        
+          <tr id="fixed32">
+            <td>fixed32</td>
+            <td>Always four bytes. More efficient than uint32 if values are often greater than 2^28.</td>
+            <td>uint32</td>
+            <td>int</td>
+            <td>int</td>
+          </tr>
+        
+          <tr id="fixed64">
+            <td>fixed64</td>
+            <td>Always eight bytes. More efficient than uint64 if values are often greater than 2^56.</td>
+            <td>uint64</td>
+            <td>long</td>
+            <td>int/long</td>
+          </tr>
+        
+          <tr id="sfixed32">
+            <td>sfixed32</td>
+            <td>Always four bytes.</td>
+            <td>int32</td>
+            <td>int</td>
+            <td>int</td>
+          </tr>
+        
+          <tr id="sfixed64">
+            <td>sfixed64</td>
+            <td>Always eight bytes.</td>
+            <td>int64</td>
+            <td>long</td>
+            <td>int/long</td>
+          </tr>
+        
+          <tr id="bool">
+            <td>bool</td>
+            <td></td>
+            <td>bool</td>
+            <td>boolean</td>
+            <td>boolean</td>
+          </tr>
+        
+          <tr id="string">
+            <td>string</td>
+            <td>A string must always contain UTF-8 encoded or 7-bit ASCII text.</td>
+            <td>string</td>
+            <td>String</td>
+            <td>str/unicode</td>
+          </tr>
+        
+          <tr id="bytes">
+            <td>bytes</td>
+            <td>May contain any arbitrary sequence of bytes.</td>
+            <td>string</td>
+            <td>ByteString</td>
+            <td>str</td>
+          </tr>
+        
+      </tbody>
+    </table>
+  </body>
+</html>
+
