@@ -14,7 +14,7 @@ Visit the resources below to learn more about the Demand API and how to use it.
 
 Resource | Description
 :--------|:------------
-Demand API Developer Guide | A high-level guide that describes Ride Demand workflows and how to implement them using the Demand API. The guide contains code examples for REST and GRPC calls.
-Demand REST API Reference Guide | A detailed reference guide for the REST Demand API, including all calls, parameters and messages.
-Demand GRPC API Reference Guide | A detailed reference guide for the GRPC Demand API, including all calls, parameters and messages.
+[Demand API Developer Guide](https://github.com/Developers-Here-Mobility/HERE-Mobility-Demand-API-Developer-Guide) | A high-level guide that describes Ride Demand workflows and how to implement them using the Demand API. The guide contains code examples for REST and GRPC calls.
+[Demand REST API Reference Guide](https://github.com/Developers-Here-Mobility/Here-Mobility-Demand-API-REST) | A detailed reference guide for the REST Demand API, including all calls, parameters and messages.
+[Demand GRPC API Reference Guide](https://github.com/Developers-Here-Mobility/Here-Mobility-Demand-API) | A detailed reference guide for the GRPC Demand API, including all calls, parameters and messages.
 
